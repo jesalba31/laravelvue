@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Administracion\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/administracion/usuario/getListarUsuarios', [UsersController::class, 'getListarUsuarios']);
+
 Route::get('/{optional?}', function () {
     return view('app');
-})->name('basepath');
+})->name('basepath')->where('optional', '.*');

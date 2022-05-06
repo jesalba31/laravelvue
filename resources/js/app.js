@@ -7,7 +7,12 @@
 require('./bootstrap');
 
 import Vue from 'vue'
-window.Vue = require('vue');
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
+window.Vue = require('vue').default;
+window.ElementUI = require('element-ui');
+window.Vue.use(ElementUI);
 
 /**
  * The following block of code may be used to automatically register your
@@ -32,5 +37,6 @@ import router from './routes'
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    ElementUI
 });
